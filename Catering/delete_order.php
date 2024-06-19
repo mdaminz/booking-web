@@ -46,12 +46,25 @@ https://templatemo.com/tm-591-villa-agency
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li><a href="order_list.php" class="active">Order List</a></li>
-
-
-              <!-- <li><a href="contact.html">Contact Us</a></li> -->
-              <li><a href="signIn.php"><i class="fas fa-sign-out-alt"></i> Sign Out</a></li>
-            </ul>
+                        <li><a href="index.php" class="active">Home</a></li>
+                        <li><a href="about_us.php">About Us</a></li>
+                        <?php
+                        session_start();
+                        if (isset($_SESSION['user_id'])) {
+                            // User is logged in, show user's first name and last name
+                            echo '<li><a href="quotation_form.php">Request Quotation</a></li>';
+                            echo '<li><a>Hi, ' . $_SESSION['first_name'] . ' ' . $_SESSION['last_name'] . '</a></li>';
+                            echo '<li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Sign Out</a></li>';
+                        } else {
+                            // User is not logged in, show Sign In link
+                            echo '<li><a href="signIn.php">Sign In</a></li>';
+                            echo '<li><a href="quotation_form.php"><i class="fas fa-file-alt"></i> Request Quotation</a></li>';
+                        }
+                        ?>
+                        <!-- <li><a href="contact.html">Contact Us</a></li> -->
+                        <!-- <li><a href="quotation_form.php"><i class="fas fa-file-alt"></i> Request Quotation</a></li>
+                        <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Sign Out</a></li> -->
+                    </ul>
             <a class='menu-trigger'>
               <span>Menu</span>
             </a>

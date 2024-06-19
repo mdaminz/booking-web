@@ -29,31 +29,44 @@
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
     <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav class="main-nav">
-            <!-- ***** Logo Start ***** -->
-            <a href="index.php" class="logo">
-              <h1>Catering</h1>
-            </a>
-            <!-- ***** Logo End ***** -->
-            <!-- ***** Menu Start ***** -->
-            <ul class="nav">
-              <li><a href="index.php" class="active">Home</a></li>
-              <li><a href="about_us.php">About Us</a></li>
-              <li><a href="signIn.php">Sign In</a></li>
-              <!-- <li><a href="contact.html">Contact Us</a></li> -->
-              <li><a href="quotation_form.php"><i class="fas fa-file-alt"></i> Request Quotation</a></li>
-            </ul>
-            <a class='menu-trigger'>
-              <span>Menu</span>
-            </a>
-            <!-- ***** Menu End ***** -->
-          </nav>
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.php" class="logo">
+                        <h1>Catering</h1>
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="index.php" class="active">Home</a></li>
+                        <li><a href="about_us.php">About Us</a></li>
+                        <?php
+                        session_start();
+                        if (isset($_SESSION['user_id'])) {
+                            // User is logged in, show user's first name and last name
+                            echo '<li><a href="quotation_form.php">Request Quotation</a></li>';
+                            echo '<li><a>Hi, ' . $_SESSION['first_name'] . ' ' . $_SESSION['last_name'] . '</a></li>';
+                            echo '<li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Sign Out</a></li>';
+                        } else {
+                            // User is not logged in, show Sign In link
+                            echo '<li><a href="signIn.php">Sign In</a></li>';
+                            echo '<li><a href="quotation_form.php"><i class="fas fa-file-alt"></i> Request Quotation</a></li>';
+                        }
+                        ?>
+                        <!-- <li><a href="contact.html">Contact Us</a></li> -->
+                        <!-- <li><a href="quotation_form.php"><i class="fas fa-file-alt"></i> Request Quotation</a></li>
+                        <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Sign Out</a></li> -->
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
         </div>
-      </div>
     </div>
-  </header>
+</header>
   <!-- ***** Header Area End ***** -->
 
   <div class="main-banner">
