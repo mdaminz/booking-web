@@ -41,7 +41,7 @@
             <ul class="nav">
               <li><a href="index.php" class="active">Home</a></li>
               <li><a href="about_us.php">About Us</a></li>
-              <li><a href="signIn.php">For Admin</a></li>
+              <li><a href="signIn.php">Sign In</a></li>
               <!-- <li><a href="contact.html">Contact Us</a></li> -->
               <li><a href="quotation_form.php"><i class="fas fa-file-alt"></i> Request Quotation</a></li>
             </ul>
