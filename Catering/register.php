@@ -217,12 +217,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $role = mysqli_real_escape_string($dbc, trim($_POST['role']));
     }
 
-    // Check if email already exists:
-    $q = "SELECT user_id FROM users WHERE email='$email'";
-    $r = @mysqli_query($dbc, $q);
-    if (mysqli_num_rows($r) > 0) {
-        $errors[] = 'The email address is already registered. Please use a different email address.';
-    }
+    // // Check if email already exists:
+    // $q = "SELECT user_id FROM users WHERE email='$email'";
+    // $r = @mysqli_query($dbc, $q);
+    // if (mysqli_num_rows($r) > 0) {
+    //     $errors[] = 'The email address is already registered. Please use a different email address.';
+    // }
 
     if (empty($errors)) { // If everything's OK.
 
@@ -253,14 +253,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         exit();
 
-    } else { // Report the errors.
+    // } else { // Report the errors.
 
-        echo '<h1>Error!</h1>
-        <p class="error">The following error(s) occurred:<br />';
-        foreach ($errors as $msg) { // Print each error.
-            echo " - $msg<br />\n";
-        }
-        echo '</p><p>Please try again.</p><p><br /></p>';
+    //     echo '<h1>Error!</h1>
+    //     <p class="error">The following error(s) occurred:<br />';
+    //     foreach ($errors as $msg) { // Print each error.
+    //         echo " - $msg<br />\n";
+    //     }
+    //     echo '</p><p>Please try again.</p><p><br /></p>';
 
     } // End of if (empty($errors)) IF.
 } // End of the main Submit conditional.
