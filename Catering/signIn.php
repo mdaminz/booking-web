@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="assets/css/owl.css">
   <link rel="stylesheet" href="assets/css/animate.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/styles.css">
 
   <script>
     function calculateTotal() {
@@ -150,6 +151,13 @@
               <div class="col-lg-12">
                 <fieldset>
                   <button style="width: 100%;" type="submit" name="submit" id="form-submit" class="orange-button">Sign In</button>
+                </fieldset>
+              </div>
+              <br>
+              <br>
+              <div class="col-lg-12 div-changedir">
+                <fieldset>
+                  <label>Do not an account yet? <a href="register.php">Register Now!</a></label>
                 </fieldset>
               </div>
             </div>
