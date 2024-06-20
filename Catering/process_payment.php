@@ -24,10 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <title>' . htmlspecialchars($title) . '</title>
   <!-- Include Bootstrap CSS if needed -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ 
   <style>
     body {
-      background-color: #f8f9fa;
-      font-family: Arial, sans-serif;
+      font-family: "Poppins", sans-serif;
     }
     .container {
       margin-top: 50px;
@@ -84,6 +84,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       font-size: 1.1em;
       margin-bottom: 10px;
     }
+       .btn-primary {
+      background-color: darkorange;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: orangered;
+    }
   </style>
 </head>
 <body>
@@ -107,6 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <p><strong>Expiration Date:</strong> ' . htmlspecialchars($expDate) . '</p>
           <p><strong>CVV:</strong> ' . htmlspecialchars($cvv) . '</p>
           <p><strong>Card Holder Name:</strong> ' . htmlspecialchars($cardHolder) . '</p>
+          <a href="index.php" class="btn btn-primary mt-4" >Back to Home</a>
         </div>
       </div>
     </div>
@@ -128,4 +136,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 ?>
-
